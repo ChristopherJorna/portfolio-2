@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christopher Jorna</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'Bobby Jones';
+            src: url('img/BobbyJonesSoft.otf') format('opentype');
+            font-weight: normal;
+            font-display: swap;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: #faf9f7;
+            background-image: radial-gradient(#d9d4ca 1.3px, transparent 1.3px);
+            background-size: 26px 26px;
+            background-attachment: fixed;
+            color: #333;
+            line-height: 1.6;
+        }
+        a { color: inherit; }
+
+        /* ─── NAV ─── */
+        nav {
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-name {
+            font-family: 'Bobby Jones', cursive;
+            font-size: 0.95rem;
+            padding: 8px 20px;
+            border: 2px solid #222;
+            border-radius: 100px;
+        }
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .nav-right a {
+            text-decoration: none;
+            font-size: 0.85rem;
+            color: #555;
+            transition: color 0.2s;
+        }
+        .nav-right a:hover { color: #000; }
+        .nav-social {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+        .nav-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+        }
+        .nav-social svg {
+            width: 18px;
+            height: 18px;
+            fill: #333;
+        }
+        .nav-welcome {
+            font-family: 'Bobby Jones', cursive;
+            font-size: 0.82rem;
+            padding: 8px 20px;
+            background: #222;
+            color: #fff;
+            border-radius: 100px;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+        .nav-welcome:hover { background: #444; }
+
+        /* ─── HERO ─── */
+        .hero {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 70px 48px 50px;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 64px;
+            align-items: center;
+        }
+        .hero-text h1 {
+            font-family: 'Bobby Jones', cursive;
+            font-size: clamp(2.6rem, 5.5vw, 4rem);
+            line-height: 1.12;
+            margin-bottom: 10px;
+        }
+        .hero-text h1 span {
+            background: #d4edfc;
+            padding: 0 8px;
+            border-radius: 6px;
+        }
+        .hero-subtitle {
+            font-family: 'Bobby Jones', cursive;
+            font-size: 1.4rem;
+            color: #7ec8e3;
+            margin-bottom: 32px;
+        }
+        .hero-mission {
+            background: #d4edfc;
+            border-radius: 14px;
+            padding: 18px 22px;
+            display: inline-block;
+            margin-bottom: 24px;
+        }
+        .hero-mission p {
+            font-family: 'Bobby Jones', cursive;
+            font-size: 0.92rem;
+            color: #333;
+            line-height: 1.7;
+        }
+        .hero-location {
+            font-size: 0.85rem;
+            color: #888;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .hero-photo {
+            position: relative;
+        }
+        .hero-photo img {
+            width: 100%;
+            max-width: 480px;
+            border-radius: 24px;
+            border: 5px solid #f0b4d4;
+            display: block;
+            margin: 0 auto;
+            transform: rotate(2deg);
+            transition: transform 0.3s ease;
+            box-shadow: 6px 8px 0 rgba(240,180,212,0.35);
+        }
+        .hero-photo:hover img {
+            transform: rotate(0deg) scale(1.02);
+        }
+        /* sparkle decorations */
+        .sparkle {
+            position: absolute;
+            font-size: 1.4rem;
+            animation: twinkle 2s ease-in-out infinite;
+            pointer-events: none;
+            user-select: none;
+        }
+        .sparkle-1 { top: -10px; right: 40px; animation-delay: 0s; }
+        .sparkle-2 { bottom: 30px; left: -10px; animation-delay: 0.7s; font-size: 1rem; }
+        .sparkle-3 { bottom: -5px; right: 60px; animation-delay: 1.3s; font-size: 0.9rem; }
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1.1); }
+        }
+
+        /* ─── PROJECTS ─── */
+        .projects-section {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 50px 48px;
+        }
+        .projects-heading {
+            font-family: 'Bobby Jones', cursive;
+            font-size: 2.2rem;
+            margin-bottom: 8px;
+        }
+        .projects-heading span {
+            background: #ffe0a0;
+            padding: 0 10px;
+            border-radius: 6px;
+        }
+        .projects-arrow {
+            font-size: 2rem;
+            margin-bottom: 24px;
+            display: block;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 28px;
+            margin-bottom: 56px;
+            max-width: 880px;
+        }
+        .project-card {
+            border-radius: 20px;
+            overflow: hidden;
+            border: 4px solid;
+            background: #fff;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        .project-card:hover {
+            transform: translateY(-6px) rotate(-1deg);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.1);
+        }
+        .project-card:nth-child(1) { border-color: #7ec8e3; }
+        .project-card:nth-child(2) { border-color: #f0b4d4; }
+        .project-card:nth-child(3) { border-color: #ffe0a0; }
+        .project-card:nth-child(4) { border-color: #b8d8b8; }
+        .project-card:nth-child(5) { border-color: #c9b3e0; }
+        .project-card:nth-child(6) { border-color: #7ec8e3; }
+
+        .project-card img {
+            width: 100%;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            display: block;
+        }
+        .project-card.vert img { aspect-ratio: 9/16; }
+        .project-card.horiz img { aspect-ratio: 16/9; }
+        .project-card .card-label {
+            padding: 18px 22px;
+            font-family: 'Bobby Jones', cursive;
+            font-size: 1.15rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .wip-card {
+            cursor: default;
+            opacity: 0.75;
+            position: relative;
+        }
+        .wip-card:hover {
+            transform: none !important;
+            box-shadow: none !important;
+        }
+        .wip-card::after {
+            content: 'Work in progress';
+            position: absolute;
+            inset: 0;
+            background: rgba(255,255,255,0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Bobby Jones', cursive;
+            font-size: 0.95rem;
+            color: #333;
+            border-radius: 17px;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        .wip-card:hover::after { opacity: 1; }
+        .wip-badge {
+            font-size: 0.6rem;
+            background: #ffe0a0;
+            padding: 2px 8px;
+            border-radius: 100px;
+            color: #888;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 500;
+        }
+        .tv-badge {
+            font-size: 0.58rem;
+            background: #d4edfc;
+            padding: 2px 9px;
+            border-radius: 100px;
+            color: #4a7a92;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+        .skills-cols {
+            display: block;
+            max-width: 700px;
+        }
+        .skills-cols > div { margin-bottom: 24px; }
+        .skills-cols > div:last-child { margin-bottom: 0; }
+        .skills-cat {
+            font-family: 'Bobby Jones', cursive;
+            font-size: 0.82rem;
+            color: #888;
+            margin-bottom: 8px;
+        }
+
+        /* ─── STILLS SECTION ─── */
+        .stills-section {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 24px 48px 64px;
+        }
+        .stills-heading {
+            font-family: 'Bobby Jones', cursive;
+            font-size: 1.7rem;
+            margin-bottom: 6px;
+        }
+        .stills-sub {
+            font-size: 0.9rem;
+            color: #888;
+            margin-bottom: 24px;
+        }
+        .stills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+        .stills-grid img {
+            aspect-ratio: 16/9;
+            object-fit: cover;
+        }
+        .stills-grid.vert {
+            grid-template-columns: repeat(4, 1fr);
+        }
+        .stills-grid.vert img {
+            aspect-ratio: 9/16;
+        }
+        .stills-grid img {
+            width: 100%;
+            border-radius: 12px;
+            display: block;
+            transition: transform 0.25s ease;
+        }
+        .stills-grid img:hover { transform: scale(1.02); }
+        .stills-grid img { cursor: zoom-in; }
+
+        /* ─── LIGHTBOX ─── */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(20,18,16,0.92);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            z-index: 1000;
+            cursor: zoom-out;
+        }
+        .lightbox.open { display: flex; }
+        .lightbox img {
+            max-width: 92vw;
+            max-height: 90vh;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 24px;
+            right: 32px;
+            font-size: 2rem;
+            color: #fff;
+            cursor: pointer;
+            line-height: 1;
+            font-family: 'Bobby Jones', cursive;
+        }
+
+        /* ─── AWARDS / LAURELS ─── */
+        .awards-section {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 30px 48px 20px;
+        }
+        .awards-heading {
+            font-family: 'Bobby Jones', cursive;
+            font-size: 1.7rem;
+            margin-bottom: 4px;
+        }
+        .awards-heading span {
+            background: #ffe0a0;
+            padding: 0 10px;
+            border-radius: 6px;
+        }
+        .awards-sub {
+            font-size: 0.9rem;
+            color: #888;
+            margin-bottom: 28px;
+        }
+        .awards-group { margin-bottom: 34px; }
+        .awards-group:last-child { margin-bottom: 0; }
+        .awards-group-title {
+            font-family: 'Bobby Jones', cursive;
+            font-size: 1.05rem;
+            color: #333;
+            margin-bottom: 14px;
+        }
+        .laurels-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+        .laurel {
+            position: relative;
+            width: 290px;
+            height: 135px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            transition: transform 0.25s ease;
+        }
+        .laurel:hover { transform: translateY(-4px) scale(1.03); }
+        .laurel svg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .laurel-text {
+            position: relative;
+            z-index: 1;
+            padding: 0 52px;
+        }
+        .laurel-top {
+            display: block;
+            font-family: 'Bobby Jones', cursive;
+            font-size: 0.62rem;
+            letter-spacing: 0.14em;
+            color: #b1862f;
+            text-transform: uppercase;
+            margin-bottom: 3px;
+        }
+        .laurel-mid {
+            display: block;
+            font-family: 'Bobby Jones', cursive;
+            font-size: 0.95rem;
+            color: #333;
+            line-height: 1.15;
+        }
+        .laurel-fest {
+            display: block;
+            font-size: 0.72rem;
+            color: #666;
+            margin-top: 5px;
+            line-height: 1.3;
+        }
+        .laurel-year {
+            display: block;
+            font-family: 'Bobby Jones', cursive;
+            font-size: 0.66rem;
+            color: #b1862f;
+            margin-top: 4px;
+        }
+
+        /* ─── BIO ─── */
+        .bio-section {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 40px 48px 60px;
+        }
+        .bio-heading {
+            font-family: 'Bobby Jones', cursive;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+        }
+        .bio-heading span {
+            background: #d4edfc;
+            padding: 0 8px;
+            border-radius: 6px;
+        }
+        .bio-text {
+            font-size: 0.95rem;
+            color: #555;
+            max-width: 600px;
+            line-height: 1.8;
+        }
+        .bio-text strong { color: #333; }
+        .bio-text a {
+            color: #333;
+            text-decoration: none;
+            border-bottom: 1px solid #ccc;
+        }
+        .bio-text a:hover { border-color: #333; }
+
+        /* ─── SKILLS ─── */
+        .skills-section {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 48px 60px;
+        }
+        .skills-heading {
+            font-family: 'Bobby Jones', cursive;
+            font-size: 1.2rem;
+            margin-bottom: 16px;
+        }
+        .skills-list {
+            font-family: 'Bobby Jones', cursive;
+            font-size: 0.78rem;
+            color: #888;
+            line-height: 2;
+            max-width: 600px;
+            letter-spacing: 0.02em;
+        }
+
+        /* ─── CONTACT ─── */
+        .contact-section {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 40px 48px 80px;
+            border-top: 2px solid #e6e2d8;
+        }
+        .contact-heading {
+            font-family: 'Bobby Jones', cursive;
+            font-size: 1.4rem;
+            margin-bottom: 16px;
+        }
+        .contact-email {
+            font-size: 0.95rem;
+            color: #555;
+            text-decoration: none;
+            border-bottom: 1px solid #ccc;
+        }
+        .contact-email:hover { color: #000; border-color: #000; }
+        .contact-socials {
+            margin-top: 16px;
+            display: flex;
+            gap: 20px;
+        }
+        .contact-socials a {
+            font-size: 0.82rem;
+            color: #888;
+            text-decoration: none;
+        }
+        .contact-socials a:hover { color: #333; }
+
+        footer {
+            padding: 24px 40px;
+            text-align: center;
+            font-size: 0.72rem;
+            color: #bbb;
+        }
+
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 40px 24px;
+                gap: 32px;
+            }
+            .hero-photo { order: -1; }
+            .hero-photo img { max-width: 320px; }
+            nav { padding: 16px 20px; }
+            .projects-section, .awards-section, .stills-section, .bio-section, .skills-section, .contact-section {
+                padding-left: 24px; padding-right: 24px;
+            }
+            .laurels-row { justify-content: center; }
+            .project-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+            .stills-grid { grid-template-columns: 1fr; }
+            .stills-grid.vert { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <div class="nav-name">Christopher Jorna</div>
+        <div class="nav-right">
+            <div class="nav-social">
+                <a href="https://www.linkedin.com/in/christopher-jorna-b88a78197/" target="_blank">
+                    <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </a>
+                <a href="https://www.instagram.com/christopherjorna/" target="_blank">
+                    <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                </a>
+            </div>
+            <a href="#" class="nav-welcome">Welcome</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <div class="hero">
+        <div class="hero-text">
+            <h1>Hi, I'm <span>Christopher</span></h1>
+            <p class="hero-subtitle">Film Director & VP Supervisor and Operator</p>
+            <div class="hero-mission">
+                    <p>Tell stories that</p>
+                <p>&#10084;&#65039; Warm your heart</p>
+                <p>&#128522; Get you to smile</p>
+                <p>&#128170; And motivate</p>
+            </div>
+            <p class="hero-location">Madrid, Spain</p>
+        </div>
+        <div class="hero-photo">
+            <span class="sparkle sparkle-1">&#10024;</span>
+            <span class="sparkle sparkle-2">&#10024;</span>
+            <span class="sparkle sparkle-3">&#9733;</span>
+            <img src="img/cj-portrait.jpg" alt="Christopher Jorna">
+        </div>
+    </div>
+
+    <!-- FEATURED PROJECTS -->
+    <div class="projects-section">
+        <h2 class="projects-heading"><span>Featured Projects</span></h2>
+        <span class="projects-arrow">&darr;</span>
+        <div class="project-grid">
+            <a href="https://youtu.be/dKFreDQ7mpo" target="_blank" class="project-card vert">
+                <img src="img/lpm-1.jpg" alt="Low Power Mode">
+                <div class="card-label">Low Power Mode</div>
+            </a>
+            <div class="project-card horiz wip-card" title="Work in progress">
+                <img src="img/goldfish-1.jpg" alt="Goldfish">
+                <div class="card-label">Goldfish <span class="wip-badge">WIP</span></div>
+            </div>
+            <a href="https://youtu.be/naxk1rqjzkM" target="_blank" class="project-card horiz">
+                <img src="https://img.youtube.com/vi/naxk1rqjzkM/maxresdefault.jpg" alt="Directing Showreel">
+                <div class="card-label">Directing Showreel</div>
+            </a>
+            <a href="https://www.youtube.com/watch?v=ScDzipMfMrs" target="_blank" class="project-card horiz">
+                <img src="https://img.youtube.com/vi/ScDzipMfMrs/maxresdefault.jpg" alt="Metamorphosis">
+                <div class="card-label">Metamorphosis <span class="tv-badge">Dutch &amp; Belgian TV</span></div>
+            </a>
+        </div>
+    </div>
+
+    <!-- LAUREL WREATH SPRITE (defined once, reused via <use>) -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <defs>
+            <g id="wreath" fill="#b1862f">
+                <g>
+                    <path d="M110,122 C80,114 64,90 66,64 C67,44 78,26 98,14" fill="none" stroke="#b1862f" stroke-width="2.4" stroke-linecap="round"/>
+                    <ellipse cx="102" cy="116" rx="8" ry="2.8" transform="rotate(34 102 116)"/>
+                    <ellipse cx="92" cy="106" rx="8.5" ry="3" transform="rotate(22 92 106)"/>
+                    <ellipse cx="83" cy="95" rx="9" ry="3" transform="rotate(8 83 95)"/>
+                    <ellipse cx="75" cy="82" rx="9" ry="3" transform="rotate(-8 75 82)"/>
+                    <ellipse cx="69" cy="68" rx="8.5" ry="3" transform="rotate(-26 69 68)"/>
+                    <ellipse cx="68" cy="53" rx="8" ry="2.8" transform="rotate(-44 68 53)"/>
+                    <ellipse cx="73" cy="38" rx="7.5" ry="2.6" transform="rotate(-60 73 38)"/>
+                    <ellipse cx="83" cy="25" rx="7" ry="2.4" transform="rotate(-72 83 25)"/>
+                </g>
+                <g transform="translate(220,0) scale(-1,1)">
+                    <path d="M110,122 C80,114 64,90 66,64 C67,44 78,26 98,14" fill="none" stroke="#b1862f" stroke-width="2.4" stroke-linecap="round"/>
+                    <ellipse cx="102" cy="116" rx="8" ry="2.8" transform="rotate(34 102 116)"/>
+                    <ellipse cx="92" cy="106" rx="8.5" ry="3" transform="rotate(22 92 106)"/>
+                    <ellipse cx="83" cy="95" rx="9" ry="3" transform="rotate(8 83 95)"/>
+                    <ellipse cx="75" cy="82" rx="9" ry="3" transform="rotate(-8 75 82)"/>
+                    <ellipse cx="69" cy="68" rx="8.5" ry="3" transform="rotate(-26 69 68)"/>
+                    <ellipse cx="68" cy="53" rx="8" ry="2.8" transform="rotate(-44 68 53)"/>
+                    <ellipse cx="73" cy="38" rx="7.5" ry="2.6" transform="rotate(-60 73 38)"/>
+                    <ellipse cx="83" cy="25" rx="7" ry="2.4" transform="rotate(-72 83 25)"/>
+                </g>
+            </g>
+        </defs>
+    </svg>
+
+    <!-- AWARDS -->
+    <div class="awards-section">
+        <h2 class="awards-heading"><span>Awards</span></h2>
+
+        <div class="awards-group">
+            <h3 class="awards-group-title">Low Power Mode</h3>
+            <div class="laurels-row">
+                <div class="laurel">
+                    <svg viewBox="0 0 220 130" aria-hidden="true"><use href="#wreath"/></svg>
+                    <div class="laurel-text">
+                        <span class="laurel-top">Winner</span>
+                        <span class="laurel-mid">Best Production Design</span>
+                        <span class="laurel-fest">New Bedford Film Festival</span>
+                        <span class="laurel-year">2025</span>
+                    </div>
+                </div>
+                <div class="laurel">
+                    <svg viewBox="0 0 220 130" aria-hidden="true"><use href="#wreath"/></svg>
+                    <div class="laurel-text">
+                        <span class="laurel-top">Winner</span>
+                        <span class="laurel-mid">Best Comedy</span>
+                        <span class="laurel-fest">ConCarolinas Film Festival</span>
+                        <span class="laurel-year">2025</span>
+                    </div>
+                </div>
+                <div class="laurel">
+                    <svg viewBox="0 0 220 130" aria-hidden="true"><use href="#wreath"/></svg>
+                    <div class="laurel-text">
+                        <span class="laurel-top">Nominee</span>
+                        <span class="laurel-mid">Best Short Film</span>
+                        <span class="laurel-year">2025</span>
+                    </div>
+                </div>
+                <div class="laurel">
+                    <svg viewBox="0 0 220 130" aria-hidden="true"><use href="#wreath"/></svg>
+                    <div class="laurel-text">
+                        <span class="laurel-top">Nominee</span>
+                        <span class="laurel-mid">Best Director</span>
+                        <span class="laurel-year">2025</span>
+                    </div>
+                </div>
+                <div class="laurel">
+                    <svg viewBox="0 0 220 130" aria-hidden="true"><use href="#wreath"/></svg>
+                    <div class="laurel-text">
+                        <span class="laurel-top">Nominee</span>
+                        <span class="laurel-mid">Best Ensemble</span>
+                        <span class="laurel-year">2025</span>
+                    </div>
+                </div>
+                <div class="laurel">
+                    <svg viewBox="0 0 220 130" aria-hidden="true"><use href="#wreath"/></svg>
+                    <div class="laurel-text">
+                        <span class="laurel-top">Nominee</span>
+                        <span class="laurel-mid">Best Original Score</span>
+                        <span class="laurel-year">2025</span>
+                    </div>
+                </div>
+                <div class="laurel">
+                    <svg viewBox="0 0 220 130" aria-hidden="true"><use href="#wreath"/></svg>
+                    <div class="laurel-text">
+                        <span class="laurel-top">Nominee</span>
+                        <span class="laurel-mid">Best Production Design</span>
+                        <span class="laurel-year">2025</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="awards-group">
+            <h3 class="awards-group-title">Los Sue&ntilde;os de los Muertos</h3>
+            <div class="laurels-row">
+                <div class="laurel">
+                    <svg viewBox="0 0 220 130" aria-hidden="true"><use href="#wreath"/></svg>
+                    <div class="laurel-text">
+                        <span class="laurel-top">Award Winner</span>
+                        <span class="laurel-mid">World Film Carnival</span>
+                        <span class="laurel-fest">Singapore</span>
+                        <span class="laurel-year">2022</span>
+                    </div>
+                </div>
+                <div class="laurel">
+                    <svg viewBox="0 0 220 130" aria-hidden="true"><use href="#wreath"/></svg>
+                    <div class="laurel-text">
+                        <span class="laurel-top">Semi-Finalist</span>
+                        <span class="laurel-mid">Austrian Filmfestival</span>
+                        <span class="laurel-year">2022</span>
+                    </div>
+                </div>
+                <div class="laurel">
+                    <svg viewBox="0 0 220 130" aria-hidden="true"><use href="#wreath"/></svg>
+                    <div class="laurel-text">
+                        <span class="laurel-top">Honorable Mention</span>
+                        <span class="laurel-mid">ARFF Amsterdam</span>
+                        <span class="laurel-fest">International Film Festival</span>
+                        <span class="laurel-year">2022</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- GOLDFISH STILLS -->
+    <div class="stills-section">
+        <h2 class="stills-heading">Goldfish</h2>
+        <p class="stills-sub">Director / VFX / 2026 / with <a href="https://eskobros.com/" target="_blank" style="color:#555;border-bottom:1px solid #ccc;text-decoration:none">Eskobros</a></p>
+        <div class="stills-grid" style="grid-template-columns:repeat(3,1fr)">
+            <img src="img/goldfish-1.jpg" alt="Goldfish still" style="aspect-ratio:16/9">
+            <img src="img/goldfish-2.jpg" alt="Goldfish still" style="aspect-ratio:16/9">
+            <img src="img/goldfish-3.jpg" alt="Goldfish still" style="aspect-ratio:16/9">
+        </div>
+    </div>
+
+    <!-- ABOUT ME -->
+    <div class="bio-section">
+        <h2 class="bio-heading"><span>About Me</span></h2>
+        <p class="bio-text">
+            I'm a <strong>film director</strong> and <strong>virtual production operator</strong> based in Madrid. I direct films and build the VFX workflows that make them, so I'm either on set or at my desk solving a shot.
+        </p>
+        <br>
+        <p class="bio-text">
+            I learned <strong>virtual production</strong> from scratch and worked on international stages for <strong>Netflix</strong>, <strong>ITV</strong> and others. Now I'm building AI tools on top of it: <strong>white-wall compositing</strong> and background generation, mostly. That work got me speaking at <strong>Epic Games</strong> and a few VP gatherings.
+        </p>
+        <br>
+        <p class="bio-text">
+            My main project is <strong>Low Power Mode</strong>, a story about a tiny civilisation living inside a phone. I've wanted to make it for years. Most of what I build is really just me trying to get it made.
+        </p>
+    </div>
+
+    <!-- SKILLS -->
+    <div class="skills-section">
+        <h2 class="skills-heading">My Skills</h2>
+        <div class="skills-cols">
+            <div>
+                <p class="skills-cat">Languages</p>
+                <p class="skills-list">German, English, Dutch, French, Spanish, Portuguese</p>
+            </div>
+            <div>
+                <p class="skills-cat">Expertise</p>
+                <p class="skills-list">Unreal Engine, Disguise, Pixera, Assimilate, Ultimatte, DaVinci Resolve, Adobe (Ae, Pr, Il, Ps, Lr), Startracker, Mo-Sys VP Pro, NDisplay Programming, Helios Megapixel, Tessera Brompton, NVIDIA Sync, Stype, MIMIKS, Renderstream, Midjourney, ComfyUI, Runway, Luma.ai, Gaussian Splatting, Networking, Video routing</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="contact-section">
+        <h2 class="contact-heading">Get in touch</h2>
+        <a href="mailto:christopher.jorna@gmail.com" class="contact-email">christopher.jorna@gmail.com</a>
+        <div class="contact-socials">
+            <a href="https://www.instagram.com/christopherjorna/" target="_blank">Instagram</a>
+            <a href="https://www.linkedin.com/in/christopher-jorna-b88a78197/" target="_blank">LinkedIn</a>
+            <a href="https://www.tiktok.com/@christopherjorna" target="_blank">TikTok</a>
+        </div>
+    </div>
+
+    <footer>Christopher Jorna</footer>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img src="" alt="">
+    </div>
+
+    <script>
+        // 3D tilt on project cards
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateX = (y - centerY) / centerY * -8;
+                const rotateY = (x - centerX) / centerX * 8;
+                card.style.transform = `perspective(600px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px)`;
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = '';
+            });
+        });
+
+        // Gentle tilt on stills
+        document.querySelectorAll('.stills-grid img').forEach(img => {
+            img.addEventListener('mousemove', (e) => {
+                const rect = img.getBoundingClientRect();
+                const x = (e.clientX - rect.left) / rect.width;
+                const y = (e.clientY - rect.top) / rect.height;
+                const rotateX = (y - 0.5) * -6;
+                const rotateY = (x - 0.5) * 6;
+                img.style.transform = `perspective(500px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.03)`;
+            });
+            img.addEventListener('mouseleave', () => {
+                img.style.transform = '';
+            });
+        });
+
+        // Lightbox — click any still to view full size
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = lightbox.querySelector('img');
+        document.querySelectorAll('.stills-grid img').forEach(img => {
+            img.addEventListener('click', () => {
+                lightboxImg.src = img.src;
+                lightboxImg.alt = img.alt;
+                lightbox.classList.add('open');
+            });
+        });
+        const closeLightbox = () => lightbox.classList.remove('open');
+        lightbox.addEventListener('click', closeLightbox);
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
